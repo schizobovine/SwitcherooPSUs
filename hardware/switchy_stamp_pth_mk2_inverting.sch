@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.4">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="100" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
+<grid distance="100" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
@@ -14009,8 +14009,8 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <part name="C3" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="025-024X044" value="470pF"/>
 <part name="F1" library="A_butts" deviceset="PTC" device="PTH"/>
 <part name="R3" library="A_butts" deviceset="RESISTOR" device="AXIAL-PTH-7.68MM" value="Iset"/>
-<part name="R1" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-5.08MM" value="100R"/>
-<part name="R2" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-5.08MM" value="300R"/>
+<part name="R1" library="A_butts" deviceset="RESISTOR" device="AXIAL-PTH-7.68MM" value="100R"/>
+<part name="R2" library="A_butts" deviceset="RESISTOR" device="AXIAL-PTH-7.68MM" value="300R"/>
 <part name="D2" library="A_butts" deviceset="DIODE-SCHOTTKY" device="DO-41" value="1N5819"/>
 <part name="D1" library="A_butts" deviceset="DIODE-SCHOTTKY" device="DO-41" value="1N5819"/>
 <part name="OUT" library="A_butts" deviceset="M02" device="JST-PTH-2"/>
@@ -14035,7 +14035,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <instance part="C1" gate="G$1" x="60.96" y="15.24"/>
 <instance part="C2" gate="G$1" x="134.62" y="15.24"/>
 <instance part="C3" gate="G$1" x="104.14" y="33.02"/>
-<instance part="F1" gate="G$1" x="35.56" y="40.64" rot="R180"/>
+<instance part="F1" gate="G$1" x="48.26" y="25.4" rot="R180"/>
 <instance part="R3" gate="G$1" x="68.58" y="48.26"/>
 <instance part="R1" gate="G$1" x="73.66" y="15.24" rot="R90"/>
 <instance part="R2" gate="G$1" x="81.28" y="22.86"/>
@@ -14053,7 +14053,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <instance part="R4" gate="G$1" x="147.32" y="25.4" rot="R270"/>
 <instance part="H1" gate="G$1" x="119.38" y="66.04"/>
 <instance part="H3" gate="G$1" x="119.38" y="60.96"/>
-<instance part="ON/OFF" gate="G$1" x="40.64" y="20.32" rot="MR0"/>
+<instance part="ON/OFF" gate="G$1" x="35.56" y="43.18" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -14151,24 +14151,24 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <label x="25.4" y="45.72" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="IN" gate="G$1" pin="1"/>
 <wire x1="22.86" y1="40.64" x2="25.4" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="F1" gate="G$1" pin="2"/>
-<wire x1="25.4" y1="40.64" x2="27.94" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="ON/OFF" gate="G$1" pin="NO"/>
+<wire x1="25.4" y1="40.64" x2="30.48" y2="40.64" width="0.1524" layer="91"/>
 <junction x="25.4" y="40.64"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="D1" gate="G$1" pin="C"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="63.5" y1="48.26" x2="60.96" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="48.26" x2="60.96" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="38.1" x2="58.42" y2="38.1" width="0.1524" layer="91"/>
 <junction x="60.96" y="38.1"/>
 <pinref part="IC1" gate="G$1" pin="VCC"/>
 <wire x1="60.96" y1="38.1" x2="76.2" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="+"/>
 <wire x1="60.96" y1="38.1" x2="60.96" y2="17.78" width="0.1524" layer="91"/>
 <junction x="60.96" y="38.1"/>
+<pinref part="D1" gate="G$1" pin="C"/>
+<wire x1="58.42" y1="38.1" x2="60.96" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VOUT-" class="0">
@@ -14203,26 +14203,6 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <wire x1="147.32" y1="20.32" x2="147.32" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="D1" gate="G$1" pin="A"/>
-<pinref part="ON/OFF" gate="G$1" pin="COM"/>
-<wire x1="45.72" y1="20.32" x2="50.8" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="20.32" x2="50.8" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="38.1" x2="53.34" y2="38.1" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$8" class="0">
-<segment>
-<pinref part="F1" gate="G$1" pin="1"/>
-<pinref part="ON/OFF" gate="G$1" pin="NC"/>
-<wire x1="35.56" y1="22.86" x2="30.48" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="22.86" x2="30.48" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="33.02" x2="43.18" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="33.02" x2="43.18" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="40.64" x2="40.64" y2="40.64" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="L1" gate="G$1" pin="1"/>
@@ -14232,6 +14212,20 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <pinref part="D2" gate="G$1" pin="C"/>
 <wire x1="124.46" y1="43.18" x2="114.3" y2="43.18" width="0.1524" layer="91"/>
 <junction x="114.3" y="43.18"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="D1" gate="G$1" pin="A"/>
+<pinref part="F1" gate="G$1" pin="1"/>
+<wire x1="53.34" y1="25.4" x2="53.34" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="F1" gate="G$1" pin="2"/>
+<pinref part="ON/OFF" gate="G$1" pin="COM"/>
+<wire x1="40.64" y1="43.18" x2="40.64" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
